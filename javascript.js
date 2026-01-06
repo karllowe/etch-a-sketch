@@ -8,12 +8,21 @@ function createGrid(size) {
             const gridDiv = document.createElement("div");
             gridDiv.classList.add("gridSquare");
             gridDiv.addEventListener("mouseover", () => {
-                gridDiv.classList.add("mouseOverStyle")
+                //gridDiv.classList.add("mouseOverStyle")
+                gridDiv.style.backgroundColor = randomColour();
             });
             gridRow.appendChild(gridDiv)
         }
         cont.appendChild(gridRow)
     }
+}
+
+function randomColour() {
+    let red = (Math.random() * 255).toPrecision(1);
+    let green = (Math.random() * 255).toPrecision(1);
+    let blue = (Math.random() * 255).toPrecision(1);
+
+    return "rgb(" + red + ", " + green + ", " + blue + ")";
 }
 
 function removeGrid() {
