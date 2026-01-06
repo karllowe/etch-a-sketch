@@ -1,18 +1,34 @@
 // create grid of 16 square divs
-const cont = document.querySelector(".container");
-
-for (let j=0; j<16; j++) { 
-    const gridRow = document.createElement("div");
-    gridRow.classList.add("gridRow");
-    for (let i=0; i<16; i++) {
-        const gridDiv = document.createElement("div");
-        gridDiv.classList.add("gridSquare");
-        gridDiv.addEventListener("mouseover", (e) => {
-            gridDiv.classList.add("mouseOverStyle")
-        });
-        gridRow.appendChild(gridDiv)
+function createGrid() {
+    const cont = document.querySelector(".container");
+    for (let j=0; j<16; j++) { 
+        const gridRow = document.createElement("div");
+        gridRow.classList.add("gridRow");
+        for (let i=0; i<16; i++) {
+            const gridDiv = document.createElement("div");
+            gridDiv.classList.add("gridSquare");
+            gridDiv.addEventListener("mouseover", () => {
+                gridDiv.classList.add("mouseOverStyle")
+            });
+            gridRow.appendChild(gridDiv)
+        }
+        cont.appendChild(gridRow)
     }
-    cont.appendChild(gridRow)
 }
 
-// event listeners
+function removeGrid() {
+    const cont = document.querySelector(".container");
+    let child = cont.lastElementChild;
+    while (child) {
+        cont.removeChild(child);
+        child = cont.lastElementChild;
+    }
+}
+
+createGrid();
+// reset grid button
+const resetButton = document.querySelector("button");
+resetButton.addEventListener("click",() => {
+    removeGrid();
+    createGrid();
+})
