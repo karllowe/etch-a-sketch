@@ -29,7 +29,7 @@ createGrid(16);
 // reset grid button
 const resetButton = document.querySelector("button");
 resetButton.addEventListener("click",() => {
-    let maxSize = 16;
+    let maxSize = 100;
     let userSelectedSize = prompt("How many boxes (max 16)?");
     let newSize = Math.min(maxSize, userSelectedSize);
 
