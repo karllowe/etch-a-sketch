@@ -3,19 +3,21 @@
     flex-direction: column;
     justify-content: space-between;
     height:100vh;
+    padding: 10px;
 }
 
 .container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height:100vh    
+    height:100vh;
+    margin-top: 10px;
 }
 
 .gridSquare {
     border: 1px solid black;
     /* background-color: aqua; */
-    flex: 1 1 0%
+    flex: 1 1 0%;
 }
 
 .gridRow {
