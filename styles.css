@@ -1,14 +1,21 @@
 .container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
-    height: 1vh;
+    height: 100%
     
 }
 
 .gridSquare {
     border: 1px solid black;
     background-color: aqua;
-    height:100px;
-    width: 100px;
+    height:40px;
+    width: 40px;
+}
+
+.gridRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 1vh;
 }
