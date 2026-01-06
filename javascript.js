@@ -10,6 +10,10 @@ function createGrid(size) {
             gridDiv.addEventListener("mouseover", () => {
                 if (!gridDiv.style.backgroundColor) {
                     gridDiv.style.backgroundColor = randomColour();
+                    gridDiv.style.opacity = 0.1;
+                } else {
+                    let startingOpacity = parseFloat(gridDiv.style.opacity);
+                    gridDiv.style.opacity = startingOpacity + 0.1;
                 }
             });
             gridRow.appendChild(gridDiv)
