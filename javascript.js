@@ -8,8 +8,9 @@ function createGrid(size) {
             const gridDiv = document.createElement("div");
             gridDiv.classList.add("gridSquare");
             gridDiv.addEventListener("mouseover", () => {
-                //gridDiv.classList.add("mouseOverStyle")
-                gridDiv.style.backgroundColor = randomColour();
+                if (!gridDiv.style.backgroundColor) {
+                    gridDiv.style.backgroundColor = randomColour();
+                }
             });
             gridRow.appendChild(gridDiv)
         }
